@@ -18,4 +18,7 @@ RUN ldconfig
 WORKDIR /root/src
 RUN pip install osmnx
 ADD main.py .
+
+# 192.168.56.1 is virtualbox host
+ENV DISPLAY=192.168.56.1:0.0
 CMD python main.py
