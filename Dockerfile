@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:stretch
 
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -16,7 +16,7 @@ RUN make install
 RUN ldconfig
 
 WORKDIR /root/src
-RUN pip install osmnx
+RUN pip install 'osmnx==0.8.*'
 ADD main.py .
 
 # 192.168.56.1 is virtualbox host
